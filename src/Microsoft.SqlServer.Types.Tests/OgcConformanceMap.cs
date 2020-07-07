@@ -21,7 +21,8 @@ IF OBJECT_ID('dbo.buildings', 'U') IS NOT NULL DROP TABLE buildings;
 IF OBJECT_ID('dbo.ponds', 'U') IS NOT NULL DROP TABLE ponds; 
 IF OBJECT_ID('dbo.named_places', 'U') IS NOT NULL DROP TABLE named_places;
 IF OBJECT_ID('dbo.map_neatlines', 'U') IS NOT NULL DROP TABLE map_neatlines;
-IF OBJECT_ID('dbo.employees', 'U') IS NOT NULL DROP TABLE employees;";
+IF OBJECT_ID('dbo.employees', 'U') IS NOT NULL DROP TABLE employees;
+IF OBJECT_ID('dbo.geopoints', 'U') IS NOT NULL DROP TABLE geopoints;";
 
         public static string CreateTables = @"
 -- Lakes
@@ -45,7 +46,9 @@ CREATE TABLE named_places (fid INTEGER NOT NULL PRIMARY KEY,name VARCHAR(64),bou
 -- Map Neatline
 CREATE TABLE map_neatlines (fid INTEGER NOT NULL PRIMARY KEY,neatline Geometry);
 -- Employees
-CREATE TABLE employees (fid INTEGER NOT NULL IDENTITY PRIMARY KEY, OrgNode hierarchyid NULL) ";
+CREATE TABLE employees (fid INTEGER NOT NULL IDENTITY PRIMARY KEY, OrgNode hierarchyid NULL); 
+-- GeoPoints
+CREATE TABLE geopoints (id INTEGER NOT NULL IDENTITY PRIMARY KEY, Place geography NOT NULL); ";
 
         public static string CreateRows = @"
 -- Lakes
@@ -133,6 +136,9 @@ INSERT INTO employees VALUES('/0.0/0.0/');
 INSERT INTO employees VALUES('/-14.0/');
 INSERT INTO employees VALUES('/-15.0/');
 INSERT INTO employees VALUES('/-100.-120/1.2/');
+
+INSERT INTO geopoints (Place) VALUES(geography::STGeomFromText('POLYGON((-122.358 47.653 , -122.348 47.649, -122.348 47.658, -122.358 47.658, -122.358 47.653))', 4326));
+INSERT INTO geopoints (Place) VALUES(geography::STGeomFromText('LINESTRING(-122.360 47.656, -122.343 47.656 )', 4326));
 ";
 
         /*

@@ -295,5 +295,17 @@ namespace Microsoft.SqlServer.Types.Tests.Geometry
                 }
             }
         }
+        
+        [TestMethod]
+        public void TestDataTableLoad()
+        {
+            var cmd = conn.CreateCommand();
+            cmd.CommandText = "select * from geopoints";
+
+            var reader = cmd.ExecuteReader();
+            var dt = new DataTable();
+            dt.Load(reader);
+            Assert.IsNotNull(dt.Rows[1]["Place"]);
+        }
     }
 }
