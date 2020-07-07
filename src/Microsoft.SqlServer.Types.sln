@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.SqlServer.Types.T
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microsoft.SqlServer.Types.RefTests", "Microsoft.SqlServer.Types.RefTests\Microsoft.SqlServer.Types.RefTests.csproj", "{BDBDEC2E-0065-4AE3-BD38-6DA8CB70D2D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTest", "MyTest\MyTest.csproj", "{A1FABB0C-876A-4927-B7ED-DC36EA56F66E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BDBDEC2E-0065-4AE3-BD38-6DA8CB70D2D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDBDEC2E-0065-4AE3-BD38-6DA8CB70D2D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDBDEC2E-0065-4AE3-BD38-6DA8CB70D2D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1FABB0C-876A-4927-B7ED-DC36EA56F66E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1FABB0C-876A-4927-B7ED-DC36EA56F66E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1FABB0C-876A-4927-B7ED-DC36EA56F66E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1FABB0C-876A-4927-B7ED-DC36EA56F66E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

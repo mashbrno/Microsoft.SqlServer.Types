@@ -295,6 +295,15 @@ namespace Microsoft.SqlServer.Types.Tests.Geometry
                 }
             }
         }
+
+        [TestMethod]
+        public void TestDataAdapter()
+        {
+            var dataAdapter = new SqlDataAdapter("select * from geopoints", conn);
+            var dt = new DataTable();
+            dataAdapter.Fill(dt);
+            Assert.IsNotNull(dt.Rows[1]["Place"]);
+        }
         
         [TestMethod]
         public void TestDataTableLoad()
